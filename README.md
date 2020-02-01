@@ -146,5 +146,7 @@ git push
 
 To check that everything went well, open your browser, navigate to your git provider web client and check that the uploaded content is available.
 
+# Creating and merging branches
 
+# Handling conflicts
 
