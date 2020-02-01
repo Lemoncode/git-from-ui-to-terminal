@@ -319,7 +319,7 @@ git merge feature/display-number-c
 
 Ouch we got merge conflicts !! Now we have to fix them running the _git mergetool_ command.
 
-Before running this command, let's make the follwing check, do you have a merge tool installed and configure? If not jump to the section Mis/Setting up a merge tool in this readme.
+Before running this command, let's make the follwing check, do you have a merge tool installed and configure? If not jump to the section **Misc/Setting up a merge tool** in this readme.
 
 Let's run the command to start the merge:
 
@@ -332,8 +332,21 @@ Depending on your configuration a given tool will be launched (KDiff, VSCode, p4
     - Whether to apply your merging branch changes to master.
     - Apply your own code update or manual merge.
 
-Depending on the tool it will try to resolve some merge conflicts.
+Depending on the tool it will try to auto-resolve some merge conflicts for you.
     
+Once you got all your conflicts solved is time to commit them:
+
+```bash
+git commit -m "fixing merge conflicts"
+```
+
+> Some developer preffer to use a UI tool to manage this (e.g. Source Tree, Git Kraken, VSCode), mileage applies.
+
+Now we can push the changes to the remote origin:
+
+```bash
+git push
+```
 
 # Misc
 
