@@ -352,6 +352,20 @@ git push
 
 ## Setting up a merge tool
 
+Setting up a merge tool can be a tough decisition there are many avialable, e.g.:
+
+- Kdiff
+- VSCode
+- p4Merge
+- ...
+
+In this [post](https://www.git-tower.com/blog/diff-tools-windows/) you can check tools available for Windows, in this [other](https://www.tecmint.com/best-linux-file-diff-tools-comparison/) for Linux, and for Mac Os guys, check this [post](https://www.lawtechnologytoday.org/2017/11/mac-comparing/).
+
+[How to setup a diff tool in Mac Os](https://coderwall.com/p/3wuuda/set-diffmerge-as-default-merge-tool-in-os-x)
+
+## Playing with staging
+
+
 ## Fetch
 
 ## Stash
