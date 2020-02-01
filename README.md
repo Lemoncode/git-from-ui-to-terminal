@@ -148,5 +148,37 @@ To check that everything went well, open your browser, navigate to your git prov
 
 # Creating and merging branches
 
+Now that we now have taken our first steps using git is time to move forward, we are going to learn the basics of creating branches.
+
+
+A branch allow us to creating an isolated copy of the master branch (or any other branch) and let us work in that code cut isolated from the rest of the team, this is really useful to:
+  - Avoid adding not completed features to our product.
+  - Avoid impacting other developers in the team by adding changes into their code base.
+  - Reviewing the work done before merging that code into the master branch.
+  
+We want to implement a new functionallity, display in the console log a second number, to avoid impacting other developers meanwhile we are progressing in our case we are going to create a branch. Let's create a new one:
+
+```
+git branch feature/display-number-b
+```
+
+> About the naming convention used to define the branch name, we are using gitflow, [click here to get more info about how to name branchs and gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+
+We can execute the command _git branch_ to check that the branch has been created, this command will indicate us as well the active branch (master):
+
+```bash
+git branch
+```
+
+Let's switch from our _master_ branch to the _feature/display-number-b_
+
+```bash
+git checkout feature/display-number-b
+```
+
+> You can switch from a given branch to another if the active branch has no changed pending to be committed (if the active branch has changes pending to be committed, you have to commit them, discard them or stash them, we will check all this later on).
+
+Now we can start working on our branch without impacting users that are working on the master branch.
+
 # Handling conflicts
 
