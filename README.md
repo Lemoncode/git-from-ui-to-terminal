@@ -289,7 +289,15 @@ git merge featute/display-number-b
 
 > We can do this because we go the branch available locally, if it's a branch created by another user it may happen that is available in the server but not in our local computer, we have to execute _fetch_ to bring it locally (check Misc section).
 
-In this case there are not conflicts, we are good to go, let's commit this 
+In this case there are not conflicts, we are good to go. 
+
+TODO check if it's need it to commit or if it's created
+
+Let's push the updates.
+
+```bash
+git push
+```
 
 # Misc
 
