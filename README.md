@@ -214,3 +214,35 @@ Now we could merge this remote branch to master, but we won't do this right away
 
 # Handling conflicts
 
+Before merging our new branch to master, let's simulate that in the mean time another developer (or ourselves) has created a second branch and it's modifying the files we have just updated.
+
+Let's hop in the master branch:
+
+```bash
+git checkout master
+```
+
+Let's create a new branch from master:
+
+```bash
+git branch feature/display-number-b
+```
+
+Let's jump into that branch
+
+```bash
+git checkout feature/display-number-c
+```
+
+Let's update the _index.js_ file and include a _numberC_ to be displayed
+
+_/.src/index.js_
+
+```diff
+const sampleNumber = 1;
++ const sampleNumberC = 3;
+- console.log(`Hello número ${sampleNumber}`);
++ console.log(`Hello número ${sampleNumber} {sampleNumberC}`);
+```
+
+# Stash
