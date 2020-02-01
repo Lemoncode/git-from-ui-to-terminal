@@ -46,7 +46,39 @@ npm init
 and install a bundler:
 
 ```
-npm install parcel --save-dev
+npm install parcel rimraf --save-dev
+```
+
+Let's create the following files under _src_ folder:
+
+_./src/index.js_
+
+```javascript
+const sampleNumber = 1;
+console.log(`Hello número ${sampleNumber}`);
+```
+
+Let's create a HTML entry point:
+
+_./src/index.html_
+
+```html
+<html>
+  <body>
+    <h1>Check the console log</h1>
+    <script src="./index.js"></script>
+  </body>
+</html>
+```
+
+Let's add the following command to the existing _package.json_ file:
+
+_./package.json_
+```diff
+"scripts": {
+    "start": "rimraf dist && parcel ./src/index.html --open",
++    "test": "echo \"Error: no test specified\" && exit 1"
+},
 ```
 
 
