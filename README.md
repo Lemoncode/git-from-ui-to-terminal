@@ -2,8 +2,12 @@
 
 In this repo you have a very simple project (a web project that displays a number via the console log), we will provide a guide to recreate it from scratch on a brand new repo.
 
-
 We will use git terminal commands to setup and work with the repo.
+
+Prerequisites to go through this tutorial:
+
+- Install Git.
+- Install nodejs.
 
 # Creating the repo
 
@@ -29,4 +33,20 @@ git clone <repository_address>
 
 > Usually your git repo provider display an input where you can copy the url / ssh address of the repo to be cloned.
 
-# Copy
+# Copying content 
+
+Let's simulate we add some content to the repository.
+
+We will start by creating a very simple web project (this is not related with Git, just setting up a nodejs project and a simple web project that displays a sentence via console log), let's execute the following command:
+
+```bash
+npm init
+```
+
+and install a bundler:
+
+```
+npm install parcel --save-dev
+```
+
+
