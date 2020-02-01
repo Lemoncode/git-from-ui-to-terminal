@@ -1,4 +1,4 @@
-# Basic steps to learn Git using the terminal
+# Learn to use Git Terminal by example
 
 In this repo you have a very simple project (a web project that displays a number via the console log), we will provide a guide to recreate it from scratch on a brand new repo.
 
@@ -299,7 +299,45 @@ Let's push the updates.
 git push
 ```
 
+Now you use your web browser and navigate to your provider web repository page and check that the changes are reflected, that was great !
+
+Let's start with a hard one... we want to merge _feature/display-number-c_ into _master_ Why is a hard one? Because the version of _master_ that was take as starting point to create _feature/display-number-c_ is different from the actual one, and it has conflicts (_index.js_ file got updated on both versions), we need to resolve the conflicts and choose what's the right piece of code to work with.
+
+Let's try to merge _feature/display-number-c_ into _master_.
+
+Let's ensure first that we are on _master_ branch
+
+```bash
+git branch
+```
+
+Now let's merge this branch into _master_
+
+```bash
+git merge feature/display-number-c
+```
+
+Ouch we got merge conflicts !! Now we have to fix them running the _git mergetool_ command.
+
+Before running this command, let's make the follwing check, do you have a merge tool installed and configure? If not jump to the section Mis/Setting up a merge tool in this readme.
+
+Let's run the command to start the merge:
+
+```bash
+git mergetool
+```
+
+Depending on your configuration a given tool will be launched (KDiff, VSCode, p4merge...), you have to go through the conflicts and choose (usually you have to decide this conflict by conflict):
+    - Whether to preserve your local changes and discard the merging branch changes.
+    - Whether to apply your merging branch changes to master.
+    - Apply your own code update or manual merge.
+
+Depending on the tool it will try to resolve some merge conflicts.
+    
+
 # Misc
+
+## Setting up a merge tool
 
 ## Fetch
 
