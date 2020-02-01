@@ -57,7 +57,7 @@ _./src/index.js_
 
 ```javascript
 const sampleNumber = 1;
-console.log(`Hello número ${sampleNumber}`);
+console.log(`Hello number ${sampleNumber}`);
 ```
 
 Let's create a HTML entry point:
@@ -186,8 +186,8 @@ _./src/index.js_
 ```diff
 const sampleNumber = 1;
 + const sampleNumberB = 2;
-- console.log(`Hello número ${sampleNumber}`);
-+ console.log(`Hello número ${sampleNumber} {sampleNumberB}`);
+- console.log(`Hello number ${sampleNumber}`);
++ console.log(`Hello number ${sampleNumber} {sampleNumberB}`);
 ```
 
 Save the changes, and add them to staging:
@@ -241,8 +241,8 @@ _/.src/index.js_
 ```diff
 const sampleNumber = 1;
 + const sampleNumberC = 3;
-- console.log(`Hello número ${sampleNumber}`);
-+ console.log(`Hello número ${sampleNumber} {sampleNumberC}`);
+- console.log(`Hello number ${sampleNumber}`);
++ console.log(`Hello number ${sampleNumber} {sampleNumberC}`);
 ```
 
 # Stash
