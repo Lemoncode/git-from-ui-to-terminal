@@ -180,5 +180,37 @@ git checkout feature/display-number-b
 
 Now we can start working on our branch without impacting users that are working on the master branch.
 
+Let's add some updates in the _.src/index.js_ files:
+
+_./src/index.js_
+```diff
+const sampleNumber = 1;
++ const sampleNumberB = 2;
+- console.log(`Hello número ${sampleNumber}`);
++ console.log(`Hello número ${sampleNumber} {sampleNumberB}`);
+```
+
+Save the changes, and add them to staging:
+
+```bash
+git add .
+```
+
+Commit them to our local database:
+
+```bash
+git commit -m "adding one more number"
+```
+
+And push them to our remote origin (our remote repository).
+
+```bash
+git push
+```
+
+Now we could merge this remote branch to master, but we won't do this right away: we will first simulate that in between that time another developer has created another branch and modified the _./src/index.js_ file creating a conflict, we will learn how to sort this out.
+
+> Some good advice: never merge form a given branch to master using the command line, rather raise pull requests and review the code (you can raise pull request from a given branch to master use the web client your favourite repository), on the other hand is a good practice to merge master into your branch just to get your code cut updated to the current branch status.
+
 # Handling conflicts
 
