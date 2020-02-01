@@ -245,4 +245,54 @@ const sampleNumber = 1;
 + console.log(`Hello number ${sampleNumber} {sampleNumberC}`);
 ```
 
-# Stash
+Let add to staging the updated file:
+
+```bash
+git add .
+```
+
+Let's commit this file
+
+```bash
+git commit -m "Adding third number"
+```
+
+Let's push the changes
+
+```bash
+git push
+```
+
+Let's check the list of branches we have available:
+
+```bash
+git branch
+```
+
+We got three branches: _master_, _feature/display-number-b_, _feature/display-number-c_ and the active one is _feature/display-number-c_
+
+We got the ok from the team to merge branch _feature-display-number-b_ into _master_, let's got for it.
+
+Let's switch to _master_ branch
+
+```bash
+git checkout master
+```
+
+Let's merge _featute/display-number-b_ it in _master_:
+
+```bash
+git merge featute/display-number-b
+```
+
+> A good practice before merging with master is to ensure the branch is updated with the latest master cut (merge from master to our branch)
+
+> We can do this because we go the branch available locally, if it's a branch created by another user it may happen that is available in the server but not in our local computer, we have to execute _fetch_ to bring it locally (check Misc section).
+
+In this case there are not conflicts, we are good to go, let's commit this 
+
+# Misc
+
+## Fetch
+
+## Stash
