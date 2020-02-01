@@ -33,7 +33,9 @@ git clone <repository_address>
 
 > Usually your git repo provider display an input where you can copy the url / ssh address of the repo to be cloned.
 
-# Copying content 
+# Adding a very simple web project
+
+**This is not related with Git, we are just creating a very simple web project to play with**
 
 Let's simulate we add some content to the repository.
 
@@ -76,9 +78,73 @@ Let's add the following command to the existing _package.json_ file:
 _./package.json_
 ```diff
 "scripts": {
-    "start": "rimraf dist && parcel ./src/index.html --open",
-+    "test": "echo \"Error: no test specified\" && exit 1"
++    "start": "rimraf dist && parcel ./src/index.html --open",
+    "test": "echo \"Error: no test specified\" && exit 1"
 },
 ```
+
+Time to give a quick check that the project is working, from the terminal execute:
+
+```bash
+npm start
+```
+
+A web browser will be opened and if you open the console log from that browser (e.g. on windows pressing F12) you can check that a message is displayed.
+
+So far so good... now that we have a very simple project to play with, let's go for it !
+
+# Preparing our first commit
+
+Maybe we think we are now ready to make our first commit to master (the default branch has been created in our project).
+
+Before making a commit let's check which files has been modified, open the terminal and type the following command:
+
+```bash
+git status
+```
+
+Wooooot !!! We have only few files updated, why we get a big ton of files in our list? Well _npm install_ did it, you get under the *node_modules* a ton of files that you don't need in you repository (and you must not upload them), we have to ignore them, create a _.gitignore_ file and include there the following content:
+
+_./.gitignore_
+```
+node_modules
+```
+
+By doing that we are telling to ignore any path that includes *node_modules* to ignore it (do not taking into account in Git), [click here to get more info about how to enter entries and patterns in a .gitIgnore](https://git-scm.com/docs/gitignore).
+
+Now if we execute again a _status_ command we will see that only the files that we have created are pending to be added:
+
+```bash
+git status
+```
+
+Now if we want to send this change to our git server, we need to perform three steps:
+  - First we need to mark that files as ready to be committed (you can do it file by file or you can select all files).
+  - Second you need to commit that staged file to your local git database
+  - Third now you can push this changes to the server.
+  
+Let's move the files to staging:
+
+```bash
+git add .
+```
+
+Now we can commit the files to our local database, we will add _-m_ command to add a commit message:
+
+```bash
+git commit -m "initial project setup"
+```
+
+> Is a good idea to add some meaningful message
+
+We are reasy to upload the local changes that we have committed to the server:
+
+
+```bash
+git push
+```
+
+To check that everything went well, open your browser, navigate to your git provider web client and check that the uploaded content is available.
+
 
 
