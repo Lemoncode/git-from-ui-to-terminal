@@ -116,7 +116,8 @@ Wooooot !!! We have only created some files, Why we get a big ton of files in ou
 
 _./.gitignore_
 ```
-node_modules
+/node_modules
+/dist
 ```
 
 By doing that we are telling to ignore any path that includes *node_modules* to ignore it (do not taking into account in Git), [click here to get more info about how to enter entries and patterns in a .gitIgnore](https://git-scm.com/docs/gitignore).
