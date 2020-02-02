@@ -1,5 +1,9 @@
 # Learn to use Git Terminal by example
 
+If you are used a GUI tool to work with Git and want to learn the basics of working using the terminal command line, keep on reading.
+
+In this readme you will find an step by step guided tutorial that will let you learn how to manage with terminal by doing.
+
 In this repo you have a very simple project (a web project that displays a number via the console log), we will provide a guide to recreate it from scratch on a brand new repo.
 
 We will use git terminal commands to setup and work with the repo.
@@ -478,3 +482,11 @@ git stash pop
 ```
 
 > Stash store this information locally and are associated to the specific commit where _stash_ was invoked.
+
+## Cheat sheets
+
+Some useful Github cheat sheets:
+
+- https://i.redd.it/8341g68g1v7y.png
+- https://www.git-tower.com/blog/git-cheat-sheet/
+- https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf
