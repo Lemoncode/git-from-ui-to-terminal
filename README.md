@@ -146,10 +146,10 @@ Now we can commit the files to our local database, we will add _-m_ command to a
 git commit -m "initial project setup"
 ```
 
-We are ready to upload the local changes that we have committed to the server (in this case the branch new created branch does not existing in the server, we need to add some extra parameters to indicate the origin to create the branch):
+We are ready to upload the local changes that we have committed to the server:
 
 ```bash
-git push -u origin feature/display-number-b
+git push 
 ```
 
 To check that everything went well, open your web browser, navigate to your git provider web client and check that the uploaded content is available.
@@ -209,10 +209,10 @@ Commit them to our local database:
 git commit -m "adding one more number"
 ```
 
-And push them to our remote origin (our remote repository).
+And push them to our remote origin (in this case the branch new created branch does not existing in the server, we need to add some extra parameters to indicate the origin to create the branch).
 
 ```bash
-git push
+git push -u origin feature/display-number-b
 ```
 
 Now we could merge this remote branch to master, but we won't to do this right now: we will first simulate that in between that time another developer has created another branch and modified the _./src/index.js_ file creating a conflict, we will learn how to sort this out in the following section.
@@ -249,7 +249,7 @@ _/.src/index.js_
 const sampleNumber = 1;
 + const sampleNumberC = 3;
 - console.log(`Hello number ${sampleNumber}`);
-+ console.log(`Hello number ${sampleNumber} {sampleNumberC}`);
++ console.log(`Hello number ${sampleNumber} ${sampleNumberC}`);
 ```
 
 Let add stage the updated file:
@@ -267,7 +267,7 @@ git commit -m "Adding third number"
 Let's push the changes
 
 ```bash
-git push
+git push -u origin feature/display-number-c
 ```
 
 Let's check the list of branches we have available:
@@ -289,7 +289,7 @@ git checkout master
 Let's merge _featute/display-number-b_ it in _master_:
 
 ```bash
-git merge featute/display-number-b
+git merge feature/display-number-b
 ```
 
 > A good practice before merging with master is to ensure the branch is updated with the latest master cut (merge from master to our branch)
@@ -297,8 +297,6 @@ git merge featute/display-number-b
 > We can do this because we go the branch available locally, if it's a branch created by another user it may happen that is available in the server but not in our local computer, we have to execute _fetch_ to bring it locally (check Misc section).
 
 In this case there are not conflicts, we are good to go. 
-
-**TODO check if it's need it to commit or if it's created**
 
 Let's push the updates.
 
@@ -372,7 +370,9 @@ In this [post](https://www.git-tower.com/blog/diff-tools-windows/) you can check
 
 [How to setup a diff tool in Mac Os](https://coderwall.com/p/3wuuda/set-diffmerge-as-default-merge-tool-in-os-x)
 
-e.g: Setting up Kdiff on windows:
+e.g: 
+
+Setting up Kdiff on windows:
 
   - Install Kdiff, you can download it from [here](https://sourceforge.net/projects/kdiff3/files/latest/download)
   - Open the terminal and run the following commands:
@@ -387,6 +387,25 @@ git config --global --add mergetool.kdiff3.trustExitCode false
 git config --global --add diff.guitool kdiff3 
 && 
 git config --global --add difftool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe" 
+&& 
+git config --global --add difftool.kdiff3.trustExitCode false
+```
+
+Setting up Kdiff on mac:
+
+  - Install Kdiff, you can download it from [here](https://sourceforge.net/projects/kdiff3/files/latest/download)
+  - Open the terminal and run the following commands:
+  
+```bash
+git config --global --add merge.tool kdiff3 
+&& 
+git config --global --add mergetool.kdiff3.path "Applications/kdiff3.app/Contents/MacOS/kdiff3" 
+&& 
+git config --global --add mergetool.kdiff3.trustExitCode false 
+&& 
+git config --global --add diff.guitool kdiff3 
+&& 
+git config --global --add difftool.kdiff3.path "Applications/kdiff3.app/Contents/MacOS/kdiff3" 
 && 
 git config --global --add difftool.kdiff3.trustExitCode false
 ```
