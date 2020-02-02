@@ -402,7 +402,7 @@ git reset HEAD <filepath>
 And... if you want to remove all files from staging?
 
 ```bash
-git rest HEAD .
+git reset HEAD .
 ```
 
 That was great, but what if want to discard changes on a file that was not on staging?
