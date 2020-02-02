@@ -384,6 +384,31 @@ git config --global --add difftool.kdiff3.trustExitCode false
 
 ## Playing with staging
 
+When you are working locally in your repository, if you want to commit changes you need to perform to steps: first add the files to staging, then commit that files.
+
+What can you do if you have added to staging a temporary file? You can remove it from stage by executing the following command:
+
+```bash
+git reset HEAD <filepath>
+```
+
+And... if you want to remove all files from staging?
+
+```bash
+git rest HEAD .
+```
+
+That was great, but what if want to discard changes on a file that was not on staging?
+
+```bash
+git checkout --
+```
+
+Last but not least... discard everything, I want to start from that fresh commit again:
+
+```bash
+git checkout HEAD
+```
 
 ## Fetch
 
