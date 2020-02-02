@@ -51,7 +51,7 @@ Let's add some content to the repository.
 We will start by creating a very simple web project (this is not related with Git, just setting up a nodejs project and a simple web project that displays a sentence via console log), let's execute the following command:
 
 ```bash
-npm init
+npm init -y
 ```
 
 and install a bundler:
