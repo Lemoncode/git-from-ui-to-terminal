@@ -118,6 +118,7 @@ _./.gitignore_
 ```
 /node_modules
 /dist
+/.cache
 ```
 
 By doing that we are telling to ignore any path that includes *node_modules* to ignore it (do not taking into account in Git), [click here to get more info about how to enter entries and patterns in a .gitIgnore](https://git-scm.com/docs/gitignore).
