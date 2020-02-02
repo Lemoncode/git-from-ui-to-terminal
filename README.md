@@ -340,7 +340,7 @@ Once you got all your conflicts solved is time to commit them:
 git commit -m "fixing merge conflicts"
 ```
 
-> Some developer preffer to use a UI tool to manage this (e.g. Source Tree, Git Kraken, VSCode), mileage applies.
+> Some developers may preffer to use a UI tool to manage this (e.g. Source Tree, Git Kraken, VSCode), mileage applies.
 
 Now we can push the changes to the remote origin:
 
@@ -362,6 +362,15 @@ Setting up a merge tool can be a tough decisition there are many avialable, e.g.
 In this [post](https://www.git-tower.com/blog/diff-tools-windows/) you can check tools available for Windows, in this [other](https://www.tecmint.com/best-linux-file-diff-tools-comparison/) for Linux, and for Mac Os guys, check this [post](https://www.lawtechnologytoday.org/2017/11/mac-comparing/).
 
 [How to setup a diff tool in Mac Os](https://coderwall.com/p/3wuuda/set-diffmerge-as-default-merge-tool-in-os-x)
+
+e.g: Setting up Kdiff on windows:
+
+  - Install Kdiff, you can download it from [here](https://sourceforge.net/projects/kdiff3/files/latest/download)
+  - Open the terminal and run the following commands:
+  
+```bash
+git config --global --add merge.tool kdiff3 && git config --global --add mergetool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe" && git config --global --add mergetool.kdiff3.trustExitCode false && git config --global --add diff.guitool kdiff3 && git config --global --add difftool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe" && git config --global --add difftool.kdiff3.trustExitCode false
+```
 
 ## Playing with staging
 
