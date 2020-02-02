@@ -412,6 +412,19 @@ git checkout HEAD
 
 ## Fetch
 
+When we work on a team, there may be branches that have been uploaded to the remote server that are not avialable in our local repository, how can I download them? you can execute:
+
+```bash
+git fetch --all
+```
+
+
+From time to time, there are branches that may not exists anymore on the remote server but you keep them locally, how can you make some cleanup and remove those unused branches refs locally, to do that we can execute:
+
+```bash
+git fetch --prune
+```
+
 ## Stash
 
 Sometime you are workiing in your codebase on some temporary code that you don't want to commit yet, but you need to quick siwtch to another branch, but... you cannot swithc without committing or discarding your temporary code. Is there any way to put that temporary code "into a drawer" and once you comeback to that commit be able to restore it? That's exactly what **stash** does.
@@ -455,7 +468,7 @@ git checkout master
 - Switch back to _feature/saygoodbye_ branch.
 
 ```bash
-git checkout feature/saygoobdy
+git checkout feature/saygoobdye
 ```
 
 - And recover the code that we store in stash
