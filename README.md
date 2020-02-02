@@ -355,6 +355,12 @@ Now we can push the changes to the remote origin:
 git push
 ```
 
+Did you get a lot of temporary _*.orig_ files? you can config your Git local installation by telling not to keep that files:
+
+```bash
+git config --global mergetool.keepBackup false
+```
+
 # Misc
 
 ## Setting up a merge tool
