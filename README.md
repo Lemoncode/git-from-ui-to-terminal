@@ -146,10 +146,10 @@ Now we can commit the files to our local database, we will add _-m_ command to a
 git commit -m "initial project setup"
 ```
 
-We are ready to upload the local changes that we have committed to the server:
+We are ready to upload the local changes that we have committed to the server (in this case the branch new created branch does not existing in the server, we need to add some extra parameters to indicate the origin to create the branch):
 
 ```bash
-git push
+git push -u origin feature/display-number-b
 ```
 
 To check that everything went well, open your web browser, navigate to your git provider web client and check that the uploaded content is available.
