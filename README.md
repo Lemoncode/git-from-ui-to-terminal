@@ -377,7 +377,9 @@ git config --global --add mergetool.kdiff3.trustExitCode false
 && 
 git config --global --add diff.guitool kdiff3 
 && 
-git config --global --add difftool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe" && git config --global --add difftool.kdiff3.trustExitCode false
+git config --global --add difftool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe" 
+&& 
+git config --global --add difftool.kdiff3.trustExitCode false
 ```
 
 ## Playing with staging
@@ -386,3 +388,55 @@ git config --global --add difftool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.e
 ## Fetch
 
 ## Stash
+
+Sometime you are workiing in your codebase on some temporary code that you don't want to commit yet, but you need to quick siwtch to another branch, but... you cannot swithc without committing or discarding your temporary code. Is there any way to put that temporary code "into a drawer" and once you comeback to that commit be able to restore it? That's exactly what **stash** does.
+
+Let's create a new branch and call it _feature/saygoodbye_
+
+```bash
+git branch feature/saygoodbye
+```
+
+Let's switch into that branch
+
+```bash
+git checkout feature/saygoodbye
+```
+
+Let's update some code:
+
+_./src/index.js_
+
+```diff
+const sampleNumber = 1;
+const sampleNumberB = 2;
+const sampleNumberC = 3;
+console.log(`Hello number ${sampleNumber} {sampleNumberB} {sampleNumberC}`);
++ console.log('Goodbye !');
+```
+
+- We don't want to commit yet, but we need to jump into master... what can we do? Stash our changes (both staged and unstaged files will be stored locally):
+
+```bash
+git stash
+```
+
+- Now we can hop into master
+
+```bash
+git checkout master
+```
+
+- Switch back to _feature/saygoodbye_ branch.
+
+```bash
+git checkout feature/saygoobdy
+```
+
+- And recover the code that we store in stash
+
+```bash
+git stash pop
+```
+
+> Stash store this information locally and are associated to the specific commit where _stash_ was invoked.
