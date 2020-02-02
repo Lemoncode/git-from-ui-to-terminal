@@ -1,17 +1,22 @@
 # Learn to use Git Terminal by example
 
-If you are used a GUI tool to work with Git and want to learn the basics of working using the terminal command line, keep on reading.
+If you are used to work with GUI tool and want to learn the basics of working using the terminal, keep on reading.
 
-In this readme you will find an step by step guided tutorial that will let you learn how to manage with terminal by doing.
+In this readme you will find a step by step guided tutorial that will let you learn how to manage with terminal by doing.
 
-In this repo you have a very simple project (a web project that displays a number via the console log), we will provide a guide to recreate it from scratch on a brand new repo.
-
+In this repo you have a very simple project (a web project that displays a number via the console log), we will provide a guide to: 
+ - Recreate the repo from scratch.
+ - Commit and push changes.
+ - Create branches.
+ - Merge branches.
+ - Resolve conflicts
+ 
 We will use git terminal commands to setup and work with the repo.
 
 Prerequisites to go through this tutorial:
 
-- Install Git.
-- Install nodejs.
+- Install [Git](https://git-scm.com/downloads).
+- Install [nodejs](https://nodejs.org/es/).
 
 # Creating the repo
 
