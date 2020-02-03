@@ -116,7 +116,7 @@ Before making a commit let's check which files has been modified, open the termi
 git status
 ```
 
-![Initial Git status](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/initial-git-status.png)
+![Initial Git status](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/initial-git-status.PNG)
 
 Wooooot !!! We have only created some files, Why we get a big ton of files in our list? Well _npm install_ did it, you get under the _node_modules_ a ton of files that you don't need in you repository (and you must not upload them), we have to ignore them, let's create a _.gitignore_ file and include there the following content:
 
@@ -136,7 +136,7 @@ Now if we execute again a _status_ command we will see that only the files that 
 git status
 ```
 
-![Git status after gitignore added](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/after-gitignore-git-status.png)
+![Git status after gitignore added](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/after-gitignore-git-status.PNG)
 
 Now if we want to push this changes to our git server, we need to perform three steps:
 
@@ -156,7 +156,7 @@ Now we can commit the files to our local database, we will add _-m_ command to a
 git commit -m "initial project setup"
 ```
 
-![Git commit](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-commit.png)
+![Git commit](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-commit.PNG)
 
 We are ready to upload the local changes that we have committed to the server:
 
@@ -196,7 +196,7 @@ Let's switch from our _master_ branch to the _feature/display-number-b_
 git checkout feature/display-number-b
 ```
 
-![Git commit](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-checkout-branch.png)
+![Git checkout branch](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-checkout-branch.png)
 
 > You can switch from a given branch to another if the active branch has no changed pending to be committed (if the active branch has changes pending to be committed, you have to commit them, discard them or stash them, we will check all this later on).
 
@@ -206,7 +206,7 @@ Another faster way to create a branch and switch to it is as follows:
 git checkout -b feature/display-number-b
 ```
 
-![Git commit](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-checkout-b.png)
+![Git checkout -b](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-checkout-b.PNG)
 
 Now we can start working on our branch without impacting users that are working on the master branch.
 
@@ -235,7 +235,7 @@ Commit them to our local database:
 git commit -m "adding one more number"
 ```
 
-![Git commit](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-commit-first-change.png)
+![Git commit](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-commit-first-change.PNG)
 
 And push them to our remote origin (in this case the branch new created branch does not existing in the server, we need to add some extra parameters to indicate the origin to create the branch).
 
@@ -320,7 +320,7 @@ Let's merge _featute/display-number-b_ it in _master_:
 git merge feature/display-number-b
 ```
 
-![Git merge](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-merge-branch-display-number-b.png)
+![Git merge](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-merge-branch-display-number-b.PNG)
 
 > A good practice before merging with master is to ensure the branch is updated with the latest master cut (merge from master to our branch)
 
@@ -352,7 +352,7 @@ Now let's merge this branch into _master_
 git merge feature/display-number-c
 ```
 
-![Merge conflicts](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-merge-branch-display-number-c-with-conflicts.png)
+![Merge conflicts](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-merge-branch-display-number-c-with-conflicts.PNG)
 
 **Ouch we got merge conflicts !!** Now we have to fix them running the _git mergetool_ command.
 
@@ -364,7 +364,7 @@ Let's run the command to start the merge:
 git mergetool
 ```
 
-![VSCode mergetool](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/vscode-mergetool.png)
+![VSCode mergetool](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/vscode-mergetool.PNG)
 
 Depending on your configuration a given tool will be launched (KDiff, VSCode, p4merge...), you have to go through the conflicts and choose (usually you have to choose conflict by conflict): - Whether to preserve your local changes and discard the merging branch changes. - Whether to apply your merging branch changes to master. - Apply your own code update or manual merge.
 
@@ -378,7 +378,7 @@ Once you got all your conflicts solved is time to commit them:
 git commit -m "fixing merge conflicts"
 ```
 
-![Git commit merge](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-commit-merge-conflicts.png)
+![Git commit merge](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-commit-merge-conflicts.PNG)
 
 > Some developers may prefer to use a UI tool to manage this (e.g. Source Tree, Git Kraken, VSCode), mileage applies.
 
@@ -398,7 +398,7 @@ git config --global mergetool.keepBackup false
 
 ## Setting up a merge tool
 
-Setting up a merge tool can be a tough decisition there are many avialable, e.g.:
+Setting up a merge tool can be a tough decisition there are many available, e.g.:
 
 - Kdiff
 - VSCode
@@ -459,7 +459,7 @@ What can you do if you have added to staging a temporary file? You can remove it
 git reset HEAD <filepath>
 ```
 
-![Git reset HEAD](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-staging.png)
+![Git reset HEAD](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-staging.PNG)
 
 And... if you want to remove all files from staging?
 
@@ -479,7 +479,7 @@ Last but not least... discard everything, I want to start from that fresh commit
 git checkout HEAD
 ```
 
-![Git checkout HEAD](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-checkout-head.png)
+![Git checkout HEAD](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-checkout-head.PNG)
 
 ## Fetch
 
@@ -529,7 +529,7 @@ console.log(`Hello number ${sampleNumber} {sampleNumberB} {sampleNumberC}`);
 git stash
 ```
 
-![Git stash](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-stash.png)
+![Git stash](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-stash.PNG)
 
 - Now we can hop into master
 
@@ -549,7 +549,7 @@ git checkout feature/saygoobdye
 git stash pop
 ```
 
-![Git stash pop](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-stash-pop.png)
+![Git stash pop](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-stash-pop.PNG)
 
 > Stash store this information locally and are associated to the specific commit where _stash_ was invoked.
 
