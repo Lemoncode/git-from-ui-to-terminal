@@ -162,11 +162,11 @@ Ya estamos listos para subir los cambios locales al servidor:
 git push
 ```
 
-Para comprobar que todo ha ido bien, abre tu navegador, visita la web de tu proveedor git y comprueba que el contenido subido está disponible. 
+Para comprobar que todo ha ido bien, abre tu navegador, abre la web de tu proveedor git y comprueba que el contenido subido está disponible. 
 
 # Crear y unificar ramas
 
-Ahora que hemos realizado los primeros pasos usando gir es hora de avanzar, vamos a aprender los comando básicos para la creación de ramas.
+Ahora que hemos realizado los primeros pasos usando git es hora de avanzar, vamos a aprender los comando básicos para la creación de ramas.
 
 Una rama nos permite crear una copia aislada de la rama _master_ (o cualquier otra rama) y trabajar aisladamente del resto del equipo. Esto es util para: 
 
@@ -174,13 +174,13 @@ Una rama nos permite crear una copia aislada de la rama _master_ (o cualquier ot
 - Minimizar el impacto que produce a los miembros del equipo de desarrollo cuando se añaden cambios realizados por otros compañeros.
 - Revisar el trabajo realizado antes de incluirlo en la rama _master_.
 
-Vamos a implementar una nueva funcionalidad en nuestra aplicación: mostrar en la consola de log un segundo numero. Para evitar el impacto a los otros desarrolladores mientras desarrollamos nuestra mejora, vamos a crear una rama. Para ello ejecutamos el siguiente comando:
+Vamos a implementar una nueva funcionalidad en nuestra aplicación: mostrar en la consola de log un segundo numero. Para evitar el impacto a los otros miembros del equipo mientras desarrollamos nuestra mejora, vamos a crear una rama. Para ello ejecutamos el siguiente comando:
 
 ```
 git branch feature/display-number-b
 ```
 
-> Sobre la convención de nombres para la rama definida, estamos usando gitflow [pulsa aquí para obtener mas información sobre como nombrar las ramas y el uso de gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+> Sobre la convención de nombres para la rama creada, estamos usando gitflow [pulsa aquí para obtener mas información sobre como nombrar las ramas y el uso de gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 
 Podemos ejecutar el comando _git branch_ para comprobar que la rama ha sido creada correctamente. Este comando nos indicará la rama activa (master):
 
@@ -196,7 +196,7 @@ git checkout feature/display-number-b
 
 ![Git checkout branch](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-checkout-branch.png)
 
-> Puedes cambiar de una rama a otra si la rama activa no tiene cambios pendientes de ser confirmados (Si la rama activa tiene cambios pendientes, tienes que hacer un _commit_ de ellos, descartarlos o almacenarlos en un espacion temporal, veremos esto mas adelante en el tutorial).
+> Puedes cambiar de una rama a otra si la rama activa no tiene cambios pendientes (Si la rama activa tiene cambios pendientes, tienes que hacer un _commit_ de ellos, descartarlos o almacenarlos en un espacio temporal, veremos esto mas adelante en el tutorial).
 
 Otra fomar más rapida es crear una rama y cambirse a ella directamente ejecutando este comando:
 
@@ -206,7 +206,7 @@ git checkout -b feature/display-number-b
 
 ![Git checkout -b](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-checkout-b.PNG)
 
-Ahora podemos empezar a trabajar en nuestra rama sin provocar ningún impacto en los otros usuarios que estan trabajando en la rama _master_. 
+Ahora podemos empezar a trabajar en nuestra rama sin provocar ningún impacto en los otros desarrolladores que estan trabajando en la rama _master_. 
 
 Vamos a añadir algunos cambios al fichero _.src/index.js_:
 
@@ -241,14 +241,13 @@ Y subimos los cambios (_push_) a nuestro servidor remoto (En esta caso la rama n
 git push -u origin feature/display-number-b
 ```
 
-Ahora podriamos volcar (_merge_) nuesra rama a la rama de _master_, pero no lo vamos a hacer por ahora: primero vamso a simular que otro desarrollador crea otra rama y modifica el fichero _./src/index.js_, esto provocará un conflicto, que aprenderemos como resolver en la siguiente sección del tutorial.
+Ahora podriamos volcar (_merge_) nuestra rama a la rama de _master_, pero no lo vamos a hacer por ahora: primero vamos a simular que otro desarrollador crea otra rama y modifica el fichero _./src/index.js_, esto provocará un conflicto, que aprenderemos a resolver en la siguiente sección del tutorial.
 
-> Un buen consejo: nunca vuelques (_merge_) una rama a master usando los comandos, en vez de eso, realiza una petición para que revisen tu código (puedes realizar esta petición usando el cliente web de tu repositorio preferido de git), por otro lado es una buena práctica volcar primero la rama _master_ a tu rama usando el terminal, de esta forma actualizaras tu codigo con los cambios que se han realizado en mastes.  
+> Un buen consejo: nunca hagas un merge directamente de una rama a master, en vez de eso, realiza una petición para que revisen tu código (puedes realizar esta petición usando el cliente web de tu repositorio preferido de git), por otro lado es una buena práctica mergear primero la rama _master_ a tu rama usando el terminal, de esta forma actualizaras tu código con los cambios que se han realizado en master.  
 
 # Manejando conflictos
 
-Antes de realizar el volcado de nuestra nueva rama a _master_, vamos a simular que otro programador 
-Before merging our new branch to master, let's simulate that in the mean time another developer (o nosotros mismos) ha creado una segunda rama y modifica los ficheros que nosotros acabamos de actualizar.
+Antes de realizar el volcado de nuestra nueva rama a _master_, vamos a simular que otro programador (o nosotros mismos) ha creado una segunda rama y modifica los ficheros que nosotros acabamos de actualizar.
 
 Cambiemos a la rama de _master_:
 
@@ -305,7 +304,7 @@ git branch
 
 Tenemos tres ramas: _master_, _feature/display-number-b_, _feature/display-number-c_ y la rama activa _feature/display-number-c_
 
-Suponemos que tenemos el OK de nuestro equipo para volcar la rama _feature-display-number-b_ dentro de _master_, vamos a ellos.
+Suponemos que tenemos el OK de nuestro equipo para mergear la rama _feature-display-number-b_ a _master_, vamos a ellos.
 
 Cambiemos a la rama _master_
 
@@ -313,7 +312,7 @@ Cambiemos a la rama _master_
 git checkout master
 ```
 
-Volcamos _featute/display-number-b_ en _master_:
+Mergeamos _featute/display-number-b_ en _master_:
 
 ```bash
 git merge feature/display-number-b
@@ -321,9 +320,9 @@ git merge feature/display-number-b
 
 ![Git merge](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-merge-branch-display-number-b.PNG)
 
-> Una buena practica antes de volcar una rama a _master_ es asegurarse que la rama está actualizada con la ultima versión de _master_ (volcar _master_ en nuestra rama)
+> Una buena practica antes de mergear una rama a _master_ es asegurarse que la rama está actualizada con la última versión de _master_ (mergear _master_ en nuestra rama)
 
-> Esto lo podemos hacer porque tenemos las ramas disponibles localmente, si es una rama creada por otro usuario puede ser que solo este disponible en el servidor y no en mi equipo local. Tendriamos que ejecutar el comando _fetch_ para traer dicha rama a nuestro equipo (ver en la seccion de varios).
+> Esto lo podemos hacer porque tenemos las ramas disponibles localmente, si es una rama creada por otro usuario puede ser que solo este disponible en el servidor y no en mi equipo local. Tendriamos que ejecutar el comando _fetch_ para traer dicha rama a nuestro equipo (ver en la sección de varios).
 
 En este caso no hay conflictos, por tanto podemos continuar.
 
@@ -335,9 +334,9 @@ git push
 
 Ahora puedes usar tu navegador web e ir a la pagina de tu proveedor de respositorios y comprobar que se han subido los cambios, genial! 
 
-El siguiente paso será mas complejo... queremos volcar la rama _feature/display-number-c_ en _master_, Por qué es más dificil en esta ocasión? Porque la version de _master_ de la que partimos para crear la rama _feature/display-number-c_ es diferente a la actual, y hay conflictos (el fichero_index.js_ es diferentes en ambas versiones). Necesitamos resolver los conflictos y seleccionar que parte de codigo es la correcta para el buen funcionamiento de la aplicación.
+El siguiente paso será mas complejo... queremos mergear la rama _feature/display-number-c_ en _master_, ¿Por qué es más dificil en esta ocasión? Porque la version de _master_ de la que partimos para crear la rama _feature/display-number-c_ es diferente a la actual, y hay conflictos (el fichero_index.js_ es diferentes en ambas versiones). Necesitamos resolver los conflictos y seleccionar que parte de codigo es la correcta para el buen funcionamiento de la aplicación.
 
-Vamos a volcar _feature/display-number-c_ en _master_.
+Vamos a mergear _feature/display-number-c_ en _master_.
 
 Asegurate primero que estas en la rama de _master_, ejecutando el comando _git branch_ obtendremos la lista de ramas disponibles y se verá resaltada la rama activa.
 
@@ -365,11 +364,15 @@ git mergetool
 
 ![VSCode mergetool](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/vscode-mergetool.PNG)
 
-Dependiendo de tu configuración, se lanzará una herramienta (KDiff, VSCode, p4Merge...). Ahora tiene que ir recorriendo todos los conflictos y eligiendo (normalmente tienes que elegir conflicto por conflicto): - Conservar tus cambios locales y descartar los cambios de la rama donde se ha mezclado los cambios. - Aplicar los cambios que se han producido en la mezcla de ambas ramas. - Modificar tu mismo el codigo para resolver el conflicto de forma manual.
+Dependiendo de tu configuración, se lanzará una herramienta (KDiff, VSCode, p4Merge...). Ahora tiene que ir recorriendo todos los conflictos y eligiendo (normalmente tienes que elegir conflicto por conflicto): 
 
-Dependiendo de la herramienta, se intentará resolver de forma automatica algunos conflictos.
+- Conservar tus cambios locales y descartar los cambios de la rama donde se ha mezclado los cambios. 
+- Aplicar los cambios que se han producido en la mezcla de ambas ramas. 
+- Modificar tu mismo el codigo para resolver el conflicto de forma manual.
 
-> Si no tines configurada una herramienta de resolución de conflictos, o quieres aprender mas sobre ella, consulta la seccion _Otros/Configurar una herramienta de resolución de conflictos_
+Dependiendo de la herramienta, se intentará resolver de forma automática algunos conflictos.
+
+> Si no tienes configurada una herramienta de resolución de conflictos, o quieres aprender mas sobre ella, consulta la seccion _Otros/Configurar una herramienta de resolución de conflictos_
 
 Una vez que tengas todos los conflictos resueltos, tendras que hacer un commit.
 
@@ -387,7 +390,7 @@ Ahora podemos hacer push para subir los cambios al servidor.
 git push
 ```
 
-Tienes muchos ficheros temporales con la extensión _\*.orig_? Puedes configurar instalacion de git para que no guarde esos ficheros:
+Tienes muchos ficheros temporales con la extensión _\*.orig_? Puedes configurar la instalación de git para que no guarde esos ficheros:
 
 ```bash
 git config --global mergetool.keepBackup false
@@ -404,11 +407,11 @@ Existe multitud de herramientas para hacer los merges, y decidir cual utilizar p
 - p4Merge
 - ...
 
-En este [post](https://www.git-tower.com/blog/diff-tools-windows/) puedes ver las disponibles para Windos, en este [otro](https://www.tecmint.com/best-linux-file-diff-tools-comparison/) para Linux, y para Mac teneis este [post](https://www.lawtechnologytoday.org/2017/11/mac-comparing/).
+En este [post](https://www.git-tower.com/blog/diff-tools-windows/) puedes ver las disponibles para Windows, en este [otro](https://www.tecmint.com/best-linux-file-diff-tools-comparison/) para Linux, y para Mac teneis este [post](https://www.lawtechnologytoday.org/2017/11/mac-comparing/).
 
 [Como configurar una herramienta para hacer los merges en Mac](https://coderwall.com/p/3wuuda/set-diffmerge-as-default-merge-tool-in-os-x)
 
-e.g:
+Por ejemplo:
 
 Configurar Kdiff en windows:
 
@@ -466,7 +469,7 @@ Y... ¿si quiero eliminar todos los ficheros que estan en estado staging?
 git reset HEAD .
 ```
 
-Genial, pero ¿y si quiereo descartar los cambios en un fichero que no esta en estado staging?
+Genial, pero ¿y si quiero descartar los cambios en un fichero que no esta en estado staging?
 
 ```bash
 git checkout --
@@ -482,12 +485,11 @@ git checkout HEAD
 
 ## Fetch
 
-Cuando trabajamos en un equipor, puede que existan ramas que han sido subidas al servidor y no estan disponibles en nuestro respositorio local, ¿Como puedo descargarmelas? Ejecuta:
+Cuando trabajamos en un equipor, puede que existan ramas que han sido subidas al servidor y no estan disponibles en nuestro respositorio local, ¿cómo puedo descargarmelas? Ejecuta:
 
 ```bash
 git fetch --all
 ```
-
 
 De vez en cuando, hay ramas que no existen en el servidor remoto pero las sigues reflejando localmente, ¿cómo puedes hacer limpieza y eliminar esas referencias?, para hacer eso, ejecutamos:
 
@@ -497,7 +499,7 @@ git fetch --prune
 
 ## Stash
 
-Algunas veces estas trabajando en tu codigo y no quieres hacer commit de los cambios, pero necesitas cambiar a otra rama, pero... para cambiar necesitas o hacer commit o descartar los cambios pendientes. ¿Hay alguna manera de poner los cambios "en borrador" y una vez que vuelvas recuperar lo? Eso es exactamente lo que hace el comando **stash**.
+Algunas veces estas trabajando en tu codigo y no quieres hacer commit de los cambios, pero necesitas cambiar a otra rama, pero... para cambiar tienes que o hacer commit o descartar los cambios pendientes. ¿Hay alguna manera de poner los cambios "en borrador" y una vez que vuelvas recuperarlos? Eso es exactamente lo que hace el comando **stash**.
 
 Vamos a crear una nueva rama y la llamamos _feature/saygoodbye_
 
@@ -522,7 +524,7 @@ const sampleNumberC = 3;
 console.log(`Hello number ${sampleNumber} {sampleNumberB} {sampleNumberC}`);
 + console.log('Goodbye !');
 ```
-- No quieremos hacer commit todavía, pero necesitamos cambiar a la rama master... ¿Cómo lo hacemos? Hacemos stash de nuestros cambios (todos los cambios serán almacenados localmente):
+- No queremos hacer commit todavía, pero necesitamos cambiar a la rama master... ¿Cómo lo hacemos? Hacemos stash de nuestros cambios (todos los cambios serán almacenados localmente):
 
 ```bash
 git stash
@@ -554,7 +556,7 @@ git stash pop
 
 ## Otros trucos
 
-A continuación paginas donde podeis encontrar algunas trucos de Github:
+A continuación se muestran algunas paginas donde podeis encontrar algunas trucos de git:
 
 - https://i.redd.it/8341g68g1v7y.png
 - https://www.git-tower.com/blog/git-cheat-sheet/
@@ -562,8 +564,7 @@ A continuación paginas donde podeis encontrar algunas trucos de Github:
 
 # Sobre Basefactor + Lemoncode
 
-Somos un equipo innovador de expertos en Javascript, 
-We are an innovating team of Javascript experts, apasionados por convertir sus ideas en productos robustos.
+Somos un equipo innovador de expertos en Javascript, apasionados por convertir sus ideas en productos robustos.
 
 [Basefactor, consultancy by Lemoncode](http://www.basefactor.com) proveedor de consultoria y servicios de coaching.
 
