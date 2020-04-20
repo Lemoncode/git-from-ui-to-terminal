@@ -372,7 +372,11 @@ Depending on the tool it will try to auto-resolve some merge conflicts for you.
 
 > If you don't have a mergetool configured, or want to learn more about it, check the section _Misc/Setting up a merge tool_.
 
-Once you got all your conflicts solved is time to commit them:
+Once you got all your conflicts solved, let's add them to staing and is to commit them:
+
+```bash
+git add .
+```
 
 ```bash
 git commit -m "fixing merge conflicts"
