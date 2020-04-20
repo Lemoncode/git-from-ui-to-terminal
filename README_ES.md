@@ -374,7 +374,11 @@ Dependiendo de la herramienta, se intentará resolver de forma automática algun
 
 > Si no tienes configurada una herramienta de resolución de conflictos, o quieres aprender mas sobre ella, consulta la seccion _Otros/Configurar una herramienta de resolución de conflictos_
 
-Una vez que tengas todos los conflictos resueltos, tendras que hacer un commit.
+Una vez que tengas todos los conflictos resueltos, pasamos los ficheros cambiados a staging y tendras que hacer un commit.
+
+```bash
+git add .
+```
 
 ```bash
 git commit -m "fixing merge conflicts"
