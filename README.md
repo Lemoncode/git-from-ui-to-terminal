@@ -499,6 +499,14 @@ From time to time, there are branches that may not exists anymore on the remote 
 git fetch --prune
 ```
 
+## Pull
+
+There are times that a given person is working in the same branch you are working on and you need to pull the changes from the server branch to your branch, we cannot do this making a **fetch**, since it could generate conflicts, in that case we use **git pull**, this will download the content of the active branch from the remote server and try to merge it with your current cut.
+
+```bash
+git pull
+```
+
 ## Stash
 
 Sometime you are working in your codebase on some temporary code that you don't want to commit yet, but you need to quick switch to another branch, but... you cannot switch without committing or discarding your temporary code. Is there any way to put that temporary code "into a drawer" and once you comeback to that commit be able to restore it? That's exactly what **stash** does.
