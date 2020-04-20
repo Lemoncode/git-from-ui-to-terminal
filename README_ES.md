@@ -501,6 +501,14 @@ De vez en cuando, hay ramas que no existen en el servidor remoto pero las sigues
 git fetch --prune
 ```
 
+## Pull
+
+En ocasiones tenemos a más de una persona trabajando en la misma rama (o por ejemplo máster puede tener cambios de otros compañeros), ¿ Qué pasa si necesita actualizar mi rama activa porque hay cambios en el servidor? Si intentamos actualizarla usando **fetch** puede que no funcione porque podemos tener conflictos en la rama activa, _¿No existe un comando que se traiga los cambios de la rama activa e intente mezclarlos?_ Si, ese comando se llama **pull**.
+
+```bash
+git pull
+```
+
 ## Stash
 
 Algunas veces estas trabajando en tu codigo y no quieres hacer commit de los cambios, pero necesitas cambiar a otra rama, pero... para cambiar tienes que o hacer commit o descartar los cambios pendientes. ¿Hay alguna manera de poner los cambios "en borrador" y una vez que vuelvas recuperarlos? Eso es exactamente lo que hace el comando **stash**.
