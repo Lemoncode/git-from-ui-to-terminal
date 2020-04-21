@@ -400,6 +400,19 @@ git config --global mergetool.keepBackup false
 
 # Misc
 
+## Create repo in our local and later on uploading to cloud repo
+
+Some text
+
+```
+// Resumen de comandos tirando ya de una base de código existente
+Git init                                           // Initializar nuestro repo en local (crea un BBDD local)
+git add origin http://........ (La url de tu repo) // Hacemos que apunte al repo en github que hemos creado en blanco
+Git add .                                          // Para poder llevar los datos a mi BBDD local primero los tengo que mover a una zona que se llama staging
+Git commit -m "comentario"                         // Ya de staging puedo grabarlos en mi BBDD local, lo de -m es un mensaje para el commit
+Git push                                           // con el push me lo llevo al servidor de github
+```
+
 ## Setting up a merge tool
 
 Setting up a merge tool can be a tough decisition there are many available, e.g.:
