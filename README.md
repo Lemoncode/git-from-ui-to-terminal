@@ -402,7 +402,7 @@ git config --global mergetool.keepBackup false
 
 ## To create and link a local repository with Github
 
-1. First, it is necessary to log in Github and create a new blank repository (without initializing it with a README file). After that you must copy the url of the repository in order to use it later, in step 4.
+1. First, it is necessary to log in Github and create a new blank repository (without initializing it with a README file). After that, you must copy the url of the repository in order to use it later, in step 4.
 
 2. You can create a new local folder for your repository or you can choose another project folder which you already wanted to upload to Github.
 
