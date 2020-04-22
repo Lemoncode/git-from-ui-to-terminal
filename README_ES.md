@@ -434,7 +434,7 @@ git add .
 git commit -m "comentario"
 ```
 
-7. Por último, ya podríamos subir los archivos a Github. En este caso no bastaría con hacer un push, ya que tendríamos que setear la rama master del repositorio;
+7. Por último, ya podríamos subir los archivos a Github. En este caso no bastaría con hacer un push, ya que tendríamos que setear la rama master del repositorio:
 
 ```bash
 git push --set-upstream origin master
