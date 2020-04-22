@@ -427,7 +427,7 @@ git add .
 6. Now you must save the files in the local database:
 
 ```bash
-git commit -m "comentario"
+git commit -m "comment"
 ```
 
 7. Finally, everything is ready to upload the files to Github. However, using push is not enough since it is necessary to set the master branch of the repository first:
