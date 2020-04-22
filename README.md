@@ -412,7 +412,7 @@ git config --global mergetool.keepBackup false
 git init
 ```
 
-4. Next, the local database must get linked with the Github repository. In order to do that, you can write the next command-line using the copied url of the repo aforementioned in step 1:
+4. Next, the local database must get linked with the Github repository. In order to do that, you can write the next command-line using the copied url of the aforementioned repository in step 1:
 
 ```bash
 git remote add origin https://github.com/...
