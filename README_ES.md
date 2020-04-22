@@ -406,35 +406,33 @@ git config --global mergetool.keepBackup false
 
 ## Crear un repositorio en una máquina local y subirlo después a Github
 
-1. En primer lugar, tenemos que acceder a Github y crear un repositorio completamente vacío (sin el archivo README inicial). Una vez hecho esto tendremos que copiar la url de dicho directorio para usarla en el paso 4.
+1. Creamos en local la carpeta de nuestro directorio o utilizamos la carpeta de un proyecto ya existente que queramos subir al repositorio de Github.
 
-2. Creamos en local la carpeta de nuestro directorio o utilizamos la carpeta de un proyecto ya existente que queramos subir al repositorio de Github.
-
-3. Accedemos a dicha carpeta con la terminal y escribimos el siguiente comando para crear la base de datos local (si la base de datos ya existe en dicha ubicación se reinicializará):
+2. Accedemos a dicha carpeta con la terminal y escribimos el siguiente comando para crear la base de datos local (si la base de datos ya existe en dicha ubicación se reinicializará):
 
 ```bash
 git init
 ```
 
-4. A continuación hay que vincular la base de datos local con el repositorio vacío creado en Github. Para ello copiamos la url del repositorio mencionado anteriormente y escribimos el siguiente comando:
+3. A continuación, es necesario vincular la base de datos local con Github. Para ello tenemos que acceder a la página web y crear un repositorio completamente vacío (sin el archivo README inicial). Copiamos la url del repositorio y escribimos el siguiente comando:
 
 ```bash
 git remote add origin https://github.com/...
 ```
 
-5. En este punto ya tendríamos la base de datos local y el repositorio de Github vinculados, por lo que sólo sería necesario subir los ficheros a dicha plataforma. Para ello empezamos alojando dichos ficheros en el staging:
+4. En este punto ya tendríamos la base de datos local y el repositorio de Github vinculados, por lo que sólo sería necesario subir los ficheros a dicha plataforma. Para ello empezamos alojando dichos ficheros en el staging:
 
 ```bash
 git add .
 ```
 
-6. Posteriormente guardamos los ficheros en la base de datos local:
+5. Posteriormente guardamos los ficheros en la base de datos local:
 
 ```bash
 git commit -m "comentario"
 ```
 
-7. Por último, ya podríamos subir los archivos a Github. En este caso no bastaría con hacer un push, ya que tendríamos que setear la rama master del repositorio:
+6. Por último, ya podríamos subir los archivos a Github. En este caso no bastaría con hacer un push, ya que tendríamos que setear la rama master del repositorio:
 
 ```bash
 git push --set-upstream origin master
