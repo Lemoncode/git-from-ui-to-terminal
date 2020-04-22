@@ -33,14 +33,15 @@ Para crear el repositorio solo tienes que pulsar en el botón _nuevo repositorio
 
 Ahora que ya tienes tu repositorio creado, es hora de traerlo a tu equipo de forma local, para hacer eso lo clonamos (descargar el repositorio a una carpeta local del ordenador).
 
-> Asegúrate que tienes permiso para acceder a esos repositorios, y si estas usando SSH tienes que tenerlo correctamente configurado (generada localmente tu clave privada y publica SSH, y subida tu clave publica a tu repositorio).  
+> Asegúrate que tienes permiso para acceder a esos repositorios, y si estas usando SSH tienes que tenerlo correctamente configurado (generada localmente tu clave privada y publica SSH, y subida tu clave publica a tu repositorio).
 
 Elige una carpeta para descargar los ficheros, abriendo un terminal windows y ejecutando el siguiente comando:
 
 ```bash
 git clone <repository_address>
 ```
-> Normalmente los proveedores de repositorios git te muestran en algún cuadro de texto la dirección url / ssh del repositorios para que la puedas copiar. 
+
+> Normalmente los proveedores de repositorios git te muestran en algún cuadro de texto la dirección url / ssh del repositorios para que la puedas copiar.
 
 ![Clonar usando SSH or HTTPS](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/clone-with-ssh-or-https.png)
 
@@ -50,11 +51,12 @@ git clone <repository_address>
 
 Vamos a añadirle contenido al repositorio.
 
-Empezaremos creando un proyecto web básico (configuramos nodejs y un proyecto node que muestra un mensaje por consola), vamos a ejecutar el siguiente comando: 
+Empezaremos creando un proyecto web básico (configuramos nodejs y un proyecto node que muestra un mensaje por consola), vamos a ejecutar el siguiente comando:
 
 ```bash
 npm init -y
 ```
+
 e instalamos un bundler:
 
 ```
@@ -116,7 +118,7 @@ git status
 
 ![Estado inicial de Git](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/initial-git-status.PNG)
 
-Como ???? Sólo hemos creado unos pocos ficheros... ¿Por qué tenemos esa enorme cantidad de ficheros en nuestra lista? Bien _npm install_ los creó, puedes ver que en la carpeta _node_modules están todos los ficheros que son necesario para ejecutar la aplicación pero no son necesario en el repositorio (y no debes subirlos), tenemos que ignorarlos, para ello creamos un fichero llamado _.gitignore_ e incluimos el siguiente contenido: 
+Como ???? Sólo hemos creado unos pocos ficheros... ¿Por qué tenemos esa enorme cantidad de ficheros en nuestra lista? Bien _npm install_ los creó, puedes ver que en la carpeta _node_modules están todos los ficheros que son necesario para ejecutar la aplicación pero no son necesario en el repositorio (y no debes subirlos), tenemos que ignorarlos, para ello creamos un fichero llamado _.gitignore\_ e incluimos el siguiente contenido:
 
 _./.gitignore_
 
@@ -142,7 +144,7 @@ Ahora si queremos subir estos cambios al nuestro servidor git, necesitamos reali
 - Segundo, necesitas hacer el _commit_ de los ficheros en tu base de datos local de git.
 - Tercero, ahora puedes hacer _push_ de estos cambios al servidor git.
 
-Vamos a marcar a los ficheros como candidatos al _commit_ (estado _staged_)   
+Vamos a marcar a los ficheros como candidatos al _commit_ (estado _staged_)
 
 ```bash
 git add .
@@ -162,13 +164,13 @@ Ya estamos listos para subir los cambios locales al servidor:
 git push
 ```
 
-Para comprobar que todo ha ido bien, abre tu navegador, abre la web de tu proveedor git y comprueba que el contenido subido está disponible. 
+Para comprobar que todo ha ido bien, abre tu navegador, abre la web de tu proveedor git y comprueba que el contenido subido está disponible.
 
 # Crear y unificar ramas
 
 Ahora que hemos realizado los primeros pasos usando git es hora de avanzar, vamos a aprender los comando básicos para la creación de ramas.
 
-Una rama nos permite crear una copia aislada de la rama _master_ (o cualquier otra rama) y trabajar aisladamente del resto del equipo. Esto es util para: 
+Una rama nos permite crear una copia aislada de la rama _master_ (o cualquier otra rama) y trabajar aisladamente del resto del equipo. Esto es util para:
 
 - Evitar añadir funcionalidades no finalizadas a nuetro producto.
 - Minimizar el impacto que produce a los miembros del equipo de desarrollo cuando se añaden cambios realizados por otros compañeros.
@@ -206,7 +208,7 @@ git checkout -b feature/display-number-b
 
 ![Git checkout -b](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/git-checkout-b.PNG)
 
-Ahora podemos empezar a trabajar en nuestra rama sin provocar ningún impacto en los otros desarrolladores que estan trabajando en la rama _master_. 
+Ahora podemos empezar a trabajar en nuestra rama sin provocar ningún impacto en los otros desarrolladores que estan trabajando en la rama _master_.
 
 Vamos a añadir algunos cambios al fichero _.src/index.js_:
 
@@ -227,7 +229,7 @@ git add .
 
 > Este comando añade al _commit_ cualquier fichero nuevo o modificado.
 
-Ya podemos hacer commit de los ficheros en nuestro base de datos local: 
+Ya podemos hacer commit de los ficheros en nuestro base de datos local:
 
 ```bash
 git commit -m "adding one more number"
@@ -243,7 +245,7 @@ git push -u origin feature/display-number-b
 
 Ahora podriamos volcar (_merge_) nuestra rama a la rama de _master_, pero no lo vamos a hacer por ahora: primero vamos a simular que otro desarrollador crea otra rama y modifica el fichero _./src/index.js_, esto provocará un conflicto, que aprenderemos a resolver en la siguiente sección del tutorial.
 
-> Un buen consejo: nunca hagas un merge directamente de una rama a master, en vez de eso, realiza una petición para que revisen tu código (puedes realizar esta petición usando el cliente web de tu repositorio preferido de git), por otro lado es una buena práctica mergear primero la rama _master_ a tu rama usando el terminal, de esta forma actualizaras tu código con los cambios que se han realizado en master.  
+> Un buen consejo: nunca hagas un merge directamente de una rama a master, en vez de eso, realiza una petición para que revisen tu código (puedes realizar esta petición usando el cliente web de tu repositorio preferido de git), por otro lado es una buena práctica mergear primero la rama _master_ a tu rama usando el terminal, de esta forma actualizaras tu código con los cambios que se han realizado en master.
 
 # Manejando conflictos
 
@@ -332,9 +334,9 @@ Vamos a subir los cambios al servidor.
 git push
 ```
 
-Ahora puedes usar tu navegador web e ir a la pagina de tu proveedor de respositorios y comprobar que se han subido los cambios, genial! 
+Ahora puedes usar tu navegador web e ir a la pagina de tu proveedor de respositorios y comprobar que se han subido los cambios, genial!
 
-El siguiente paso será mas complejo... queremos mergear la rama _feature/display-number-c_ en _master_, ¿Por qué es más dificil en esta ocasión? Porque la version de _master_ de la que partimos para crear la rama _feature/display-number-c_ es diferente a la actual, y hay conflictos (el fichero_index.js_ es diferentes en ambas versiones). Necesitamos resolver los conflictos y seleccionar que parte de codigo es la correcta para el buen funcionamiento de la aplicación.
+El siguiente paso será mas complejo... queremos mergear la rama _feature/display-number-c_ en _master_, ¿Por qué es más dificil en esta ocasión? Porque la version de _master_ de la que partimos para crear la rama _feature/display-number-c_ es diferente a la actual, y hay conflictos (el fichero*index.js* es diferentes en ambas versiones). Necesitamos resolver los conflictos y seleccionar que parte de codigo es la correcta para el buen funcionamiento de la aplicación.
 
 Vamos a mergear _feature/display-number-c_ en _master_.
 
@@ -364,10 +366,10 @@ git mergetool
 
 ![VSCode mergetool](https://github.com/Lemoncode/git-from-ui-to-terminal/raw/master/content/vscode-mergetool.PNG)
 
-Dependiendo de tu configuración, se lanzará una herramienta (KDiff, VSCode, p4Merge...). Ahora tiene que ir recorriendo todos los conflictos y eligiendo (normalmente tienes que elegir conflicto por conflicto): 
+Dependiendo de tu configuración, se lanzará una herramienta (KDiff, VSCode, p4Merge...). Ahora tiene que ir recorriendo todos los conflictos y eligiendo (normalmente tienes que elegir conflicto por conflicto):
 
-- Conservar tus cambios locales y descartar los cambios de la rama donde se ha mezclado los cambios. 
-- Aplicar los cambios que se han producido en la mezcla de ambas ramas. 
+- Conservar tus cambios locales y descartar los cambios de la rama donde se ha mezclado los cambios.
+- Aplicar los cambios que se han producido en la mezcla de ambas ramas.
 - Modificar tu mismo el codigo para resolver el conflicto de forma manual.
 
 Dependiendo de la herramienta, se intentará resolver de forma automática algunos conflictos.
@@ -401,6 +403,42 @@ git config --global mergetool.keepBackup false
 ```
 
 # Otros
+
+## Crear un repositorio en una máquina local y subirlo después a Github
+
+1. En primer lugar, tenemos que acceder a Github y crear un repositorio completamente vacío (sin el archivo README inicial). Una vez hecho esto tendremos que copiar la url de dicho directorio para usarla en el paso 4.
+
+2. Creamos en local la carpeta de nuestro directorio o utilizamos la carpeta de un proyecto ya existente que queramos subir al repositorio de Github.
+
+3. Accedemos a dicha carpeta con la terminal y escribimos el siguiente comando para crear la base de datos local (si la base de datos ya existe en dicha ubicación se reinicializará):
+
+```bash
+git init
+```
+
+4. A continuación hay que vincular la base de datos local con el repositorio vacío creado en Github. Para ello copiamos la url del repositorio mencionado anteriormente y escribimos el siguiente comando:
+
+```bash
+git remote add origin https://github.com/...
+```
+
+5. En este punto ya tendríamos la base de datos local y el repositorio de Github vinculados, por lo que sólo sería necesario subir los ficheros a dicha plataforma. Para ello empezamos alojando dichos ficheros en el staging:
+
+```bash
+git add .
+```
+
+6. Posteriormente guardamos los ficheros en la base de datos local:
+
+```bash
+git commit -m "comentario"
+```
+
+7. Por último, ya podríamos subir los archivos a Github. En este caso no bastaría con hacer un push, ya que tendríamos que setear la rama master del repositorio;
+
+```bash
+git push --set-upstream origin master
+```
 
 ## Configurar una herramienta para hacer los merges
 
@@ -536,6 +574,7 @@ const sampleNumberC = 3;
 console.log(`Hello number ${sampleNumber} {sampleNumberB} {sampleNumberC}`);
 + console.log('Goodbye !');
 ```
+
 - No queremos hacer commit todavía, pero necesitamos cambiar a la rama master... ¿Cómo lo hacemos? Hacemos stash de nuestros cambios (todos los cambios serán almacenados localmente):
 
 ```bash

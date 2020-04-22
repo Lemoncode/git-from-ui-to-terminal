@@ -400,6 +400,42 @@ git config --global mergetool.keepBackup false
 
 # Misc
 
+## To create and link a local repository with Github
+
+1. First, it is necessary to log in Github and create a new blank repository (without initializing it with a README file). After that you must copy the url of the repository in order to use it later, in step 4.
+
+2. You can create a new local folder for your repository or you can choose another project folder which you already wanted to upload to Github.
+
+3. Open the terminal and locate yourself in the project folder. In order to create a new database it is necessary to write the next command-line (if you have already done this step before, the database will not be created again but reinitialized):
+
+```bash
+git init
+```
+
+4. Next, the local database must get linked with the Github repository. In order to do that, you can write the next command-line using the copied url of the repo aforementioned in step 1:
+
+```bash
+git remote add origin https://github.com/...
+```
+
+5. At the moment, the local database and the Github repository must have been linked already. Therefore, you can proceed to upload the files, but first it is necessary to put them in staging:
+
+```bash
+git add .
+```
+
+6. Now you must save the files in the local database:
+
+```bash
+git commit -m "comentario"
+```
+
+7. Finally, everything is ready to upload the files to Github. However, using push is not enough since it is necessary to set the master branch of the repository first:
+
+```bash
+git push --set-upstream origin master
+```
+
 ## Setting up a merge tool
 
 Setting up a merge tool can be a tough decisition there are many available, e.g.:
