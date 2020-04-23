@@ -30,7 +30,7 @@ $ git config --global user.name "Test name"
 $ git config --global user.email test@example.com
 ```
 
-If you want to check your configuration, you can use the command::
+If you want to check your configuration, you can use the command:
 ```bash
 $ git config --list
 ```
