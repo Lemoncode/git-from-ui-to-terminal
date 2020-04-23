@@ -25,7 +25,7 @@ Es importante antes de comenzar establecer tu nombre de usuario y dirección de 
 ```bash
 $ git config --global user.name "Nombre prueba"
 ```
-2. Configurar tu nombre de dirección de correo electrónico
+2. Configurar tu dirección de correo electrónico
 ```bash
 $ git config --global user.email prueba@ejemplo.com
 ```
