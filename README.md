@@ -19,6 +19,22 @@ Prerequisites to go through this tutorial:
 - Install [Git](https://git-scm.com/downloads).
 - Install [nodejs](https://nodejs.org/es/).
 
+# User settings
+It is important before starting to establish your username and email address, because this information will be appear in the "commits". 
+1. Set up your username in Git
+```bash
+$ git config --global user.name "Test name"
+```
+2. Set up your email address
+```bash
+$ git config --global user.email test@example.com
+```
+
+If you want to check your configuration, you can use the command:
+```bash
+$ git config --list
+```
+
 # Creating the repo
 
 You can choose whether to use HTTPS (your standard git login user) or SSH (a more secure approach to treat with your repos but need some additional configuration).
