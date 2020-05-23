@@ -288,7 +288,21 @@ Ahora, si volvemos a ejecutar git log --oneline nuestro historial se muestra as�
 
 Comprobamos que hemos **borrado todo el historial** posterior a 250e214, por lo que si ahora realizamos **git push**, Git interpretaría que hay un error en la rama ya que faltarían confirmaciones. Por este motivo, **git reset** es más indicado para trabajo en local o rama privada.
 
+**git reset** dispone de varias **opciones o flags** para decidir a cuál o cuáles de los tres estados o árboles de Git afectamos, veamos:
 
+1. **--soft**
+
+Es la opción menos destructiva, solo elimina el commit, únicamente afecta a HEAD (historial de confirmaciones) y se detiene ahí, a la espera del commit.
+
+2. **--mixed**
+
+Es el comportamiento predeterminado, lo mismo que ejecutar git reset. Elimina tanto las confirmaciones como el contenido del Stage, nos quedamos al aespera añadir modificaciones con **git add .**
+
+2. **--hard**
+
+El visto en el ejemplo y el más destructivo, se eliminan: confirmaciones, estado del Stage y modificaciones en el directorio de trabajo. De hecho, si ejecutamos git status después de un reset --hard optendremos un repositorio limpio.  
+
+![git-reset](./content/git-reset.png)
 
 # Deshacer un commit público
 
@@ -307,8 +321,6 @@ realizamos el nuevo commit con las modificaciones y revisamos el historial con g
 ![git-revert](./content/git-revert.png)
 
 Vemos que las confirmaciones se mantienen, por lo que Git no interpretará un error al realizar **git push.**
-
-
 
 
 # Manejando conflictos
