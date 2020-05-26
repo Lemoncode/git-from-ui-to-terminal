@@ -263,6 +263,66 @@ Ahora podriamos volcar (_merge_) nuestra rama a la rama de _master_, pero no lo 
 
 > Un buen consejo: nunca hagas un merge directamente de una rama a master, en vez de eso, realiza una petición para que revisen tu código (puedes realizar esta petición usando el cliente web de tu repositorio preferido de git), por otro lado es una buena práctica mergear primero la rama _master_ a tu rama usando el terminal, de esta forma actualizaras tu código con los cambios que se han realizado en master.
 
+# Deshacer un commit local
+
+Explicaremos una de las técnicas para deshacer un determinado commit.
+
+1. Ubicados en la rama master o en la que estemos trabajando, buscamos en el historial para localizar el commit a eliminar:
+
+
+```bash
+git log --oneline
+```
+En nuestro caso optenemos lo siguiente:
+
+![git-log](./content/git-log.png)
+
+2. Si quisieramos volver al estado de la confirmación 250e214...
+
+```bash
+git reset --hard 250e214
+```
+Ahora, si volvemos a ejecutar git log --oneline nuestro historial se muestra así...
+
+![git-reset-hard](./content/git-reset-hard.png)
+
+Comprobamos que hemos **borrado todo el historial** posterior a 250e214, por lo que si ahora realizamos **git push**, Git interpretaría que hay un error en la rama ya que faltarían confirmaciones. Por este motivo, **git reset** es más indicado para trabajo en local o rama privada.
+
+**git reset** dispone de varias **opciones o flags** para decidir a cuál o cuáles de los tres estados o árboles de Git afectamos, veamos:
+
+1. **--soft**
+
+Es la opción menos destructiva, solo elimina el commit, únicamente afecta a HEAD (historial de confirmaciones) y se detiene ahí, a la espera del commit.
+
+2. **--mixed**
+
+Es el comportamiento predeterminado, lo mismo que ejecutar git reset. Elimina tanto las confirmaciones como el contenido del Stage, nos quedamos al aespera añadir modificaciones con **git add .**
+
+2. **--hard**
+
+El visto en el ejemplo y el más destructivo, se eliminan: confirmaciones, estado del Stage y modificaciones en el directorio de trabajo. De hecho, si ejecutamos git status después de un reset --hard optendremos un repositorio limpio.  
+
+![git-reset](./content/git-reset.png)
+
+# Deshacer un commit público
+
+Otro modo de deshacer una confirmación es usar **git revert**. Este es un modo más indicado cuando trabajamos con repositorios públicos o con un equipo, ya que a diferencia de reset, no eliminará el historial o no desplazará el puntero, sino que creará un nuevo commit, o mejor dicho; esperárá ha que creemos un nuevo commit. 
+
+Si lo ejecutamos, el archivo quedará modificado justo al estado anterior (volvemos un paso atrás) y por tanto será necesario "comitearlo"
+
+Ejecutamos revert en un punto similar al anterior...
+
+```bash
+git revert HEAD 
+```
+
+realizamos el nuevo commit con las modificaciones y revisamos el historial con git log...
+
+![git-revert](./content/git-revert.png)
+
+Vemos que las confirmaciones se mantienen, por lo que Git no interpretará un error al realizar **git push.**
+
+
 # Manejando conflictos
 
 Antes de realizar el volcado de nuestra nueva rama a _master_, vamos a simular que otro programador (o nosotros mismos) ha creado una segunda rama y modifica los ficheros que nosotros acabamos de actualizar.
