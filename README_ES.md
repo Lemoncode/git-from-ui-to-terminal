@@ -679,6 +679,34 @@ git stash pop
 
 > El comando stash almacena esta información localmente y se asocia al commit específico donde ha sido llamado.
 
+## Migrar un repositorio a otro servidor
+
+A veces, necesitamos migrar un repositorio a otro servidor y queremos que se migre todo, incluyendo ramas, referencias, tags, etc.
+
+En vez de usar un `clone` normal, podemos seguir los siguientes pasos:
+
+- Clonamos el repositorio original `otra vez`, pero esta vez incluyendo el flag `mirror`:
+
+```bash
+git clone --mirror <origin url>
+```
+
+- Nos habrá creado una nueva carpeta con el `nombre-repositorio.git` y clonará todo lo relacionado con el repositorio, algo como ésto:
+
+![Git mirror result](./content/git-mirror.png)
+
+- Actualizamos el terminal al nuevo directorio:
+
+```bash
+cd <cloned folder>
+```
+
+- Y hacemos un `push` a la `nueva url` usando el flag `mirror`:
+
+```bash
+git push --mirror <destination url>
+```
+
 ## Otros trucos
 
 A continuación se muestran algunas paginas donde podeis encontrar algunas trucos de git:
