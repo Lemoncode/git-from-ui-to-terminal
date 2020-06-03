@@ -615,6 +615,34 @@ git stash pop
 
 > Stash store this information locally and are associated to the specific commit where _stash_ was invoked.
 
+## Migrate repository to another one
+
+Sometimes you need to migrate some repository to another one and you really want everything, including all branches, refs, tags, etc.
+
+Instead of using a standard clone, we can follow these steps:
+
+- Clone original repository locally `again` but with the `mirror` flag:
+
+```bash
+git clone --mirror <origin url>
+```
+
+- It will create a folder with the `repository-name.git` and it will clone the current repository stuff, something like:
+
+![Git mirror result](./content/git-mirror.png)
+
+- Change terminal to the new directory:
+
+```bash
+cd <cloned folder>
+```
+
+- And push everything to the new `url repository` using `mirror` flag:
+
+```bash
+git push --mirror <destination url>
+```
+
 ## Cheat sheets
 
 Some useful Github cheat sheets:
