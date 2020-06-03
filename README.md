@@ -619,7 +619,7 @@ git stash pop
 
 Sometimes you need to migrate some repository to another one and you really want everything, including all branches, refs, tags, etc.
 
-Instead of using a standard clone, we can follow these steps:
+Instead of using a `standard clone`, we can follow these steps:
 
 - Clone original repository locally `again` but with the `mirror` flag:
 
