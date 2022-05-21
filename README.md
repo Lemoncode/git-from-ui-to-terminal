@@ -416,6 +416,8 @@ git config --global mergetool.keepBackup false
 
 # Misc
 
+## Comentario de prueba
+
 ## To create and link a local repository with Github
 
 1. You can create a new local folder for your repository or you can choose another project folder which you already wanted to upload to Github.
